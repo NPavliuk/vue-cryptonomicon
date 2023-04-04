@@ -31,7 +31,6 @@ const loadTickers = () => {
     });
 };
 
-
 export const subscribeToTicker = (ticker, cb) => {
   const subscribers = tickersHandlers.get(ticker) || [];
   tickersHandlers.set(ticker, [...subscribers, cb]);
@@ -43,4 +42,3 @@ export const unsubscribeFromTicker = ticker => {
 
 setInterval(loadTickers, UPDATE_DELAY);
 // setTimeout(loadTickers, 0);
-
